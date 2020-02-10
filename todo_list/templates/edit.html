@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block title%}Edit List{%endblock%}
+
+{%block content%}
+	</br>
+	<h4>About to change : </h4>
+	<p>{{item.item}}</p>
+	<form action="{% url 'edit' item.id %}" class="form-inline my-2 my-lg-0" method="POST">
+    		{% csrf_token %}
+      		<input class="form-control mr-sm-2" type="search" placeholder="Edit here" aria-label="Search" name="item">
+		<input type="hidden" value="{{ item.completed }}" name="completed">
+      		<button class="btn btn-secondary" type="submit">Save</button>
+    	</form>
+
+{%endblock%}
