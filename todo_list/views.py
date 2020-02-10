@@ -8,6 +8,8 @@ from django.http import HttpResponseRedirect
 def home(request):
 
     if request.method == 'POST':
+        #render out form if POST data comes through
+        #or else render the empty form
         form = ListForm(request.POST or none)
         if form.is_valid():
             form.save()
