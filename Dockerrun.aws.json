@@ -1,0 +1,25 @@
+#Dockerrun.aws.json
+{
+  "AWSEBDockerrunVersion": 2
+  "containerDefinitions": [
+    {
+      "name": "gunicorn", #used in links section
+      "image": "karanshreds/todo_app",
+      "hostname": "gunicorn"
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "karanshreds/nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 8000,
+          "containerPort": 80
+        }
+      ]
+      "links": ["gunicorn"]
+    }
+  ] 
+}
