@@ -19,7 +19,6 @@
 				{%if things.completed%} 
 				  <tr class="table-secondary">
 				    <td class="striker"><a href="{%url 'edit' things.id%}">{{things.item}}</a></td>
-					  <h1> MAIN HUN CHHUTKI</h1>
 				    <td><center><a href="{%url 'uncross' things.id%}">Uncross</center></a></td>
 				    <td><center><a href="{%url 'delete' things.id%}" method="POST">Delete</center></a></td>
 				  </tr>
